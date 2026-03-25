@@ -149,10 +149,11 @@
             history: '<div class="received bubble">Bonjour ! Comment puis-je vous aider concernant l\'ADDAP13 ?</div>'
         },
         'Régie Nord Littoral': {
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s",
-            presentation: "La<b>Régie Nord Littoral</b> agit pour l'amélioration du cadre de vie et l'insertion professionnelle dans les quartiers Nord."
-            travailDriss: "Driss a été <b>Ouvrier de quartier</b> à La Savine, les Bourrely et les Aygalades. Son travail consistait à entretenir les espaces publics et les aires de jeux.",
-            history: '<div class="received bubble">Bienvenue sur le profil de la Régie Nord Littoral !</div>'
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s",
+    presentation: "La <b>Régie Nord Littoral</b> agit pour l'amélioration du cadre de vie et l'insertion professionnelle dans les quartiers Nord.", // Virgule ajoutée ici
+    travailDriss: "Driss a été <b>Ouvrier de quartier</b> à La Savine, les Bourrely et les Aygalades. Son travail consistait à entretenir les espaces publics et les aires de jeux.",
+    history: '<div class="received bubble">Bienvenue sur le profil de la Régie Nord Littoral !</div>'
+},
         },
         'UrbanProd': {
             logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdR5IQinfmb4rbfbSTf7ss1RAaReMoF-VZQ&s",
@@ -160,7 +161,15 @@
             travailDriss: "Driss était <b>Régisseur Multimédia</b>, expert en technique et pédagogie.",
             history: '<div class="received bubble">Salut ! Prêt à parler d\'audiovisuel ?</div>'
         }
-    };
+            },
+        /* Note : Utilisation de l'apostrophe courbe ’ pour éviter le bug JS */
+        'Les Têtes de l’Art': {
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNGzRo931FOHm2MHVlVx2I-CuI-BQVI-8hw&s",
+            presentation: "<b>Les Têtes de l'Art</b> soutiennent l'art participatif et la vidéo sociale.",
+            travailDriss: "Driss était <b>Monteur et preneur de son</b> sur nos productions audiovisuelles.",
+            history: '<div class="received bubble">Bienvenue aux Têtes de l\'Art !</div>'
+        }
+            };
 
     let activeBiz = "";
 
