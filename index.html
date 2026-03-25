@@ -13,7 +13,6 @@
             --fb-text-main: #E4E6EB;
             --fb-text-sec: #B0B3B8;
             --fb-blue: #0866FF;
-            --fb-green: #31A24C;
         }
 
         body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background-color: var(--fb-dark-bg); margin: 0; color: var(--fb-text-main); }
@@ -37,10 +36,8 @@
         .card h2 { font-size: 20px; margin-top: 0; margin-bottom: 15px; }
 
         .intro-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 15px; }
-
         .post-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-        .post-content { font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
-        .post-media-container { width: 100%; border-radius: 8px; overflow: hidden; margin-top: 10px; background: #000; }
+        .post-header img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 
         /* Messenger */
         .messenger-fixed { position: fixed; bottom: 20px; right: 20px; z-index: 2000; display: flex; flex-direction: column; align-items: flex-end; }
@@ -49,27 +46,27 @@
         
         .chat-head { padding: 10px; border-bottom: 1px solid #3e4042; display: flex; align-items: center; gap: 10px; font-weight: bold; }
         .chat-head .close-btn { margin-left: auto; cursor: pointer; font-size: 20px; }
-        .chat-head #backBtn { cursor: pointer; color: var(--fb-text-sec); display: none; }
-        
-        .chat-head-logo { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: none; }
-        .biz-thumb { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+        .chat-head #backBtn { cursor: pointer; display: none; }
+        .chat-head-logo { width: 28px; height: 28px; border-radius: 50%; display: none; }
 
         .chat-body { height: 350px; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px; background: #1c1c1c; }
-        .bubble { padding: 8px 12px; border-radius: 18px; font-size: 13px; max-width: 85%; line-height: 1.4; }
+        .bubble { padding: 8px 12px; border-radius: 18px; font-size: 13px; max-width: 85%; }
         .received { background: #3a3b3c; align-self: flex-start; }
         .sent { background: var(--fb-blue); align-self: flex-end; }
         
-        .typing { font-style: italic; font-size: 11px; color: var(--fb-text-sec); padding: 5px 12px; display: none; background: #1c1c1c; }
-        
-        .chat-footer { padding: 10px; border-top: 1px solid #3e4042; display: none; gap: 8px; background: var(--fb-dark-card); }
+        .chat-footer { padding: 10px; border-top: 1px solid #3e4042; display: none; background: var(--fb-dark-card); }
         .chat-footer input { flex: 1; border: none; background: #3a3b3c; padding: 8px 15px; border-radius: 20px; outline: none; color: white; }
-        
-        .biz-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-        .biz-btn { padding: 8px; background: #3a3b3c; border-radius: 8px; font-size: 13px; cursor: pointer; transition: 0.2s; border: 1px solid #444; display: flex; align-items: center; }
-        .biz-btn:hover { background: var(--fb-dark-hover); border-color: var(--fb-blue); }
-        
-        .suggestion-btns { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
-        .suggest-btn { font-size: 10px; background: #444; padding: 4px 8px; border-radius: 10px; cursor: pointer; border: 1px solid #555; }
+
+        .biz-btn { padding: 8px; background: #3a3b3c; border-radius: 8px; font-size: 13px; cursor: pointer; margin-bottom: 5px; display: flex; align-items: center; }
+        .biz-btn img { width: 30px; height: 30px; border-radius: 50%; margin-right: 10px; }
+        .suggestion-btns { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
+        .suggest-btn { font-size: 10px; background: #444; padding: 4px 8px; border-radius: 10px; cursor: pointer; }
+
+        @media (max-width: 850px) {
+            .grid-container { grid-template-columns: 1fr; }
+            .profile-pfp-area { left: 50%; transform: translateX(-50%); flex-direction: column; align-items: center; text-align: center; }
+            .profile-header { padding-bottom: 100px; }
+        }
     </style>
 </head>
 <body>
@@ -78,15 +75,15 @@
 
 <div class="profile-header">
     <div class="cover-container">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s" alt="Photo de couverture" class="cover-photo-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s" alt="Couverture" class="cover-photo-img">
     </div>
     <div class="profile-pfp-area">
         <div class="pfp-container">
-            <img src="https://pbs.twimg.com/profile_images/1123215924054700032/Mr38sZy9_400x400.png" alt="Photo de profil" class="pfp-img">
+            <img src="https://pbs.twimg.com/profile_images/1123215924054700032/Mr38sZy9_400x400.png" alt="Profil" class="pfp-img">
         </div>
         <div class="profile-name">
             <h1>Driss Boukhamla</h1>
-            <div style="font-weight: bold; color: var(--fb-text-sec);">Médiateur Social</div>
+            <div style="font-weight: bold; color: var(--fb-text-sec);">Médiateur Social & Référent Digital</div>
         </div>
     </div>
 </div>
@@ -95,14 +92,32 @@
     <div class="sidebar">
         <div class="card">
             <h2>Intro</h2>
-            <div class="intro-item"><i class="fas fa-briefcase"></i> Médiateur Social Urbain chez <b>ADDAP13</b></div>
-            <div class="intro-item"><i class="fas fa-graduation-cap"></i> Formation <b>Référent Digital</b> chez Simplon</div>
-            <div class="intro-item"><i class="fas fa-home"></i> Marseille 13003</div>
+            <div class="intro-item"><i class="fas fa-briefcase"></i> Médiateur chez <b>ADDAP13</b></div>
+            <div class="intro-item"><i class="fas fa-graduation-cap"></i> <b>Référent Digital</b> (Simplon)</div>
+            <div class="intro-item"><i class="fas fa-history"></i> Ancien de la <b>Régie Nord Littoral</b></div>
+            <div class="intro-item"><i class="fas fa-home"></i> Habite à <b>Marseille</b></div>
         </div>
     </div>
 
     <div class="feed">
-        <div class="card">Expériences professionnelles chargées...</div>
+        <div class="card">
+            <div class="post-header">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s">
+                <div><b>Régie Nord Littoral</b><br><small>Expérience marquante</small></div>
+            </div>
+            <div class="post-content">
+                Travail de terrain et médiation au cœur des quartiers Nord de Marseille.
+            </div>
+        </div>
+        <div class="card">
+            <div class="post-header">
+                <img src="https://www.addap13.org/IMG/logo/logo_groupeaddap13quadri.jpg?1675679130">
+                <div><b>ADDAP13</b><br><small>Poste actuel</small></div>
+            </div>
+            <div class="post-content">
+                Médiation Sociale Urbaine et inclusion numérique.
+            </div>
+        </div>
     </div>
 </div>
 
@@ -115,9 +130,9 @@
             <span class="close-btn" onclick="toggleChat()">&times;</span>
         </div>
         <div class="chat-body" id="chatFlow"></div>
-        <div id="typingArea" class="typing"></div>
+        <div id="typingArea" style="display:none; padding:10px; font-size:12px; color:gray;">Réflexion...</div>
         <div class="chat-footer" id="chatFooter">
-            <input type="text" id="chatInput" placeholder="Posez une question..." onkeypress="checkKey(event)">
+            <input type="text" id="chatInput" placeholder="Tapez un message..." onkeypress="if(event.key==='Enter') sendMsg()">
         </div>
     </div> 
     <div class="launcher" onclick="toggleChat()">
@@ -129,22 +144,21 @@
     const bizConfigs = {
         'ADDAP13': {
             logo: "https://www.addap13.org/IMG/logo/logo_groupeaddap13quadri.jpg?1675679130",
-            presentation: "Nous sommes l'<b>ADDAP13</b>, spécialisée dans la médiation sociale à Marseille.",
-            travailDriss: "Driss est <b>Médiateur Social Urbain</b>. Il facilite l'accès aux droits numériques.",
-            history: '<div class="received bubble">Bonjour de l\'ADDAP13 !</div>'
+            presentation: "L'<b>ADDAP13</b> est un acteur majeur de la prévention spécialisée à Marseille.",
+            travailDriss: "Driss y travaille sur la <b>médiation urbaine</b> et l'accompagnement numérique.",
+            history: '<div class="received bubble">Bonjour ! Comment puis-je vous aider concernant l\'ADDAP13 ?</div>'
+        },
+        'Régie Nord Littoral': {
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s",
+            presentation: "La<b>Régie Nord Littoral</b> agit pour l'amélioration du cadre de vie et l'insertion professionnelle dans les quartiers Nord."
+            travailDriss: "Driss a été <b>Ouvrier de quartier</b> à La Savine, les Bourrely et les Aygalades. Son travail consistait à entretenir les espaces publics et les aires de jeux.",
+            history: '<div class="received bubble">Bienvenue sur le profil de la Régie Nord Littoral !</div>'
         },
         'UrbanProd': {
             logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdR5IQinfmb4rbfbSTf7ss1RAaReMoF-VZQ&s",
-            presentation: "<b>UrbanProd</b> est un studio de création audiovisuelle pédagogique.",
-            travailDriss: "Driss était <b>Régisseur Multimédia</b>, expert en maintenance et ateliers.",
-            history: '<div class="received bubble">Salut d\'UrbanProd !</div>'
-        },
-        /* Note : Utilisation de l'apostrophe courbe ’ pour éviter le bug JS */
-        'Les Têtes de l’Art': {
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNGzRo931FOHm2MHVlVx2I-CuI-BQVI-8hw&s",
-            presentation: "<b>Les Têtes de l'Art</b> soutiennent l'art participatif et la vidéo sociale.",
-            travailDriss: "Driss était <b>Monteur et preneur de son</b> sur nos productions audiovisuelles.",
-            history: '<div class="received bubble">Bienvenue aux Têtes de l\'Art !</div>'
+            presentation: "<b>UrbanProd</b> utilise les outils numériques pour l'inclusion sociale.",
+            travailDriss: "Driss était <b>Régisseur Multimédia</b>, expert en technique et pédagogie.",
+            history: '<div class="received bubble">Salut ! Prêt à parler d\'audiovisuel ?</div>'
         }
     };
 
@@ -163,12 +177,10 @@
         document.getElementById('headerLogo').style.display = "none";
         document.getElementById('chatFooter').style.display = "none";
         
-        let html = '<div class="received bubble">Sélectionnez une entreprise :</div><div class="biz-list">';
+        let html = '<div class="received bubble">Choisissez une expérience pour discuter :</div><div class="biz-list">';
         for (let biz in bizConfigs) {
-            // Utilisation de backticks (`) pour entourer la fonction onclick afin d'éviter les conflits d'apostrophes
             html += `<div class="biz-btn" onclick="startChat(\`${biz}\`)">
-                        <img src="${bizConfigs[biz].logo}" class="biz-thumb"> 
-                        ${biz}
+                        <img src="${bizConfigs[biz].logo}"> ${biz}
                      </div>`;
         }
         html += '</div>';
@@ -192,36 +204,32 @@
         const flow = document.getElementById('chatFlow');
         flow.innerHTML += `
             <div class="suggestion-btns">
-                <div class="suggest-btn" onclick="autoType('présentez-vous')">présentez-vous</div>
-                <div class="suggest-btn" onclick="autoType('parlez-moi de driss')">parlez-moi de driss</div>
+                <div class="suggest-btn" onclick="autoType('Qui êtes-vous ?')">Présentation</div>
+                <div class="suggest-btn" onclick="autoType('Le rôle de Driss ?')">Rôle de Driss</div>
             </div>`;
     }
 
     function autoType(val) { document.getElementById('chatInput').value = val; sendMsg(); }
-    function checkKey(e) { if(e.key === 'Enter') sendMsg(); }
 
     function sendMsg() {
         const input = document.getElementById('chatInput');
         const flow = document.getElementById('chatFlow');
         const typing = document.getElementById('typingArea');
         const text = input.value.trim().toLowerCase();
-        if(!text || !activeBiz) return;
+        if(!text) return;
 
-        const userMsg = `<div class="sent bubble">${input.value}</div>`;
-        flow.innerHTML += userMsg;
+        flow.innerHTML += `<div class="sent bubble">${input.value}</div>`;
         input.value = "";
         scrollDown();
 
-        typing.innerText = activeBiz + " réfléchit...";
         typing.style.display = "block";
-
         setTimeout(() => {
             typing.style.display = "none";
-            let response = text.includes("driss") ? bizConfigs[activeBiz].travailDriss : bizConfigs[activeBiz].presentation;
-            flow.innerHTML += `<div class="received bubble"><b>${activeBiz} :</b> ${response}</div>`;
+            let res = text.includes("driss") ? bizConfigs[activeBiz].travailDriss : bizConfigs[activeBiz].presentation;
+            flow.innerHTML += `<div class="received bubble"><b>${activeBiz}:</b> ${res}</div>`;
             addSuggestions();
             scrollDown();
-        }, 1000);
+        }, 800);
     }
 
     function scrollDown() {
