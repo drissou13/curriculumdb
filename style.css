@@ -1,0 +1,27 @@
+/* Style des miniatures dans la liste Messenger */
+.biz-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid #3e4042;
+}
+
+/* Style du logo dans l'en-tête de la conversation */
+.chat-head-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none; /* Caché tant qu'aucune entreprise n'est choisie */
+    border: 1px solid #fff;
+}
+
+/* Alignement du nom dans le bouton */
+.biz-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+}
