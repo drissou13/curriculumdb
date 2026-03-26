@@ -13,9 +13,11 @@
             --fb-text-main: #E4E6EB;
             --fb-text-sec: #B0B3B8;
             --fb-blue: #0866FF;
+            --fb-green: #31A24C;
         }
 
         body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background-color: var(--fb-dark-bg); margin: 0; color: var(--fb-text-main); }
+        
         nav { background: var(--fb-dark-card); height: 56px; display: flex; align-items: center; padding: 0 16px; border-bottom: 1px solid #3e4042; position: fixed; width: 100%; top: 0; z-index: 1000; }
         .fb-logo { color: var(--fb-blue); font-size: 40px; margin-right: 10px; }
 
@@ -27,6 +29,7 @@
         .pfp-container { width: 168px; height: 168px; border-radius: 50%; border: 4px solid var(--fb-dark-card); background: #333; overflow: hidden; }
         .pfp-img { width: 100%; height: 100%; object-fit: cover; }
         
+        .profile-name { padding-bottom: 15px; }
         .profile-name h1 { margin: 0; font-size: 32px; }
 
         .grid-container { display: grid; grid-template-columns: 360px 1fr; gap: 16px; max-width: 1000px; margin: 40px auto; padding: 0 16px; }
@@ -56,13 +59,13 @@
         .received { background: #3a3b3c; align-self: flex-start; }
         .sent { background: var(--fb-blue); align-self: flex-end; }
         
-        .typing { font-style: italic; font-size: 11px; color: var(--fb-text-sec); padding: 5px 12px; display: none; }
+        .typing { font-style: italic; font-size: 11px; color: var(--fb-text-sec); padding: 5px 12px; display: none; background: #1c1c1c; }
         
         .chat-footer { padding: 10px; border-top: 1px solid #3e4042; display: none; gap: 8px; background: var(--fb-dark-card); }
         .chat-footer input { flex: 1; border: none; background: #3a3b3c; padding: 8px 15px; border-radius: 20px; outline: none; color: white; }
         
         .biz-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-        .biz-btn { padding: 8px; background: #3a3b3c; border-radius: 8px; font-size: 13px; cursor: pointer; border: 1px solid #444; display: flex; align-items: center; }
+        .biz-btn { padding: 8px; background: #3a3b3c; border-radius: 8px; font-size: 13px; cursor: pointer; transition: 0.2s; border: 1px solid #444; display: flex; align-items: center; }
         .biz-btn:hover { background: var(--fb-dark-hover); border-color: var(--fb-blue); }
         
         .suggestion-btns { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
@@ -75,11 +78,11 @@
 
 <div class="profile-header">
     <div class="cover-container">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s" alt="Couverture" class="cover-photo-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyTmef9RVk_OakxJrpGwiEawpQxe5N9LledQ&s" alt="Photo de couverture" class="cover-photo-img">
     </div>
     <div class="profile-pfp-area">
         <div class="pfp-container">
-            <img src="https://pbs.twimg.com/profile_images/1123215924054700032/Mr38sZy9_400x400.png" alt="Profil" class="pfp-img">
+            <img src="https://pbs.twimg.com/profile_images/1123215924054700032/Mr38sZy9_400x400.png" alt="Photo de profil" class="pfp-img">
         </div>
         <div class="profile-name">
             <h1>Driss Boukhamla</h1>
@@ -95,16 +98,20 @@
             <div class="intro-item"><i class="fas fa-briefcase"></i> Médiateur Social Urbain chez <b>ADDAP13</b></div>
             <div class="intro-item"><i class="fas fa-graduation-cap"></i> Formation <b>Référent Digital</b> chez Simplon</div>
             <div class="intro-item"><i class="fas fa-home"></i> Habite à <b>Marseille 13003</b></div>
+            <div class="intro-item"><i class="fas fa-envelope"></i> d****.b********@gmail.com</div>
+            <div class="intro-item"><i class="fas fa-phone"></i> 06 ** ** ** **</div>
         </div>
     </div>
 
     <div class="feed">
         <div class="card">
             <div class="post-header">
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdR5IQinfmb4rbfbSTf7ss1RAaReMoF-VZQ&s" alt="UrbanProd" style="width:40px; height:40px; border-radius:50%; object-fit: cover;">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdR5IQinfmb4rbfbSTf7ss1RAaReMoF-VZQ&s" alt="Logo UrbanProd" style="width:40px; height:40px; border-radius:50%; object-fit: cover;">
                 <div><b>URBANPROD</b><br><small>2015 - 2017</small></div>
             </div>
-            <div class="post-content"><b>Agent Multimedia</b> : Animation d'ateliers numériques.</div>
+            <div class="post-content">
+                <b>Agent Multimedia</b> : Animation d'ateliers numériques et maintenance du parc audiovisuel.
+            </div>
             <div class="post-media-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
                 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/p0RyHygFyp0" allowfullscreen></iframe>
             </div>
@@ -112,10 +119,22 @@
 
         <div class="card">
             <div class="post-header">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNGzRo931FOHm2MHVlVx2I-CuI-BQVI-8hw&s" alt="Têtes de l'Art" style="width:40px; height:40px; border-radius:50%; object-fit: cover;">
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNGzRo931FOHm2MHVlVx2I-CuI-BQVI-8hw&s" alt="LES TETES DE L'ART" style="width:40px; height:40px; border-radius:50%; object-fit: cover;">
                 <div><b>LES TETES DE L'ART</b><br><small>2017 - 2019</small></div>
             </div>
-            <div class="post-content"><b>Monteur et preneur de son</b> : Production audiovisuelle.</div>
+            <div class="post-content">
+                <b>Monteur et preneur de son</b> : Production audiovisuelle et création web.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="post-header">
+             <img src="https://www.addap13.org/IMG/logo/logo_groupeaddap13quadri.jpg?1675679130" alt="addap13" style="width:40px; height:40px; border-radius:50%; object-fit: cover;">
+                <div><b>GROUPE ADDAP13</b><br><small>2022 - 2026</small></div>
+            </div>
+            <div class="post-content">
+                Missions de Médiateur Social Urbain : Facilitation des relations et formation numérique.
+            </div>
         </div>
     </div>
 </div>
@@ -134,7 +153,6 @@
             <input type="text" id="chatInput" placeholder="Posez une question..." onkeypress="checkKey(event)">
         </div>
     </div> 
-    
     <div class="launcher" onclick="toggleChat()">
         <i class="fab fa-facebook-messenger" style="color:var(--fb-blue); font-size:24px;"></i>
     </div>
@@ -144,26 +162,26 @@
     const bizConfigs = {
         'ADDAP13': {
             logo: "https://www.addap13.org/IMG/logo/logo_groupeaddap13quadri.jpg?1675679130",
-            presentation: "Nous sommes l'<b>ADDAP13</b>, spécialisée dans la médiation sociale à Marseille.",
-            travailDriss: "Driss est <b>Médiateur Social Urbain</b>. Il facilite l'accès aux droits.",
-            history: '<div class="received bubble">Bonjour de l\'ADDAP13 !</div>'
+            presentation: "Nous sommes l'<b>ADDAP13</b>, spécialisée dans la prévention et la médiation sociale à Marseille.",
+            travailDriss: "Driss travaille chez nous en tant que <b>Médiateur Social Urbain</b>. Il facilite l'accès aux droits.",
+            history: '<div class="received bubble">Bonjour de l\'ADDAP13 !<br>Posez vos questions sur Driss.</div>'
         },
         'Régie Nord': {
             logo: "https://cdn-icons-png.flaticon.com/512/1063/1063376.png",
-            presentation: "La <b>Régie Nord Littoral</b> agit pour l'amélioration du cadre de vie dans les quartiers Nord.",
-            travailDriss: "Driss a été <b>Ouvrier de quartier</b> à La Savine et aux Aygalades.",
+            presentation: "La <b>Régie Nord Littoral</b> agit pour l'amélioration du cadre de vie et l'insertion dans les quartiers Nord.",
+            travailDriss: "Driss a été <b>Ouvrier de quartier</b> à La Savine, les Bourrely et les Aygalades.",
             history: '<div class="received bubble">Bonjour de la Régie Nord !</div>'
         },
         'UrbanProd': {
             logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdR5IQinfmb4rbfbSTf7ss1RAaReMoF-VZQ&s",
-            presentation: "<b>UrbanProd</b> est un studio de création audiovisuelle sociale.",
-            travailDriss: "Driss était <b>Régisseur Multimédia</b>.",
+            presentation: "<b>UrbanProd</b> est un studio de création audiovisuelle et numérique à vocation sociale.",
+            travailDriss: "Driss était <b>Régisseur Multimédia</b>. Il gérait le parc matériel et animait des ateliers.",
             history: '<div class="received bubble">Salut d\'UrbanProd !</div>'
         },
         'Les Têtes de l\'Art': {
             logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVNGzRo931FOHm2MHVlVx2I-CuI-BQVI-8hw&s",
             presentation: "<b>Les Têtes de l'Art</b> soutiennent l'art participatif via la vidéo.",
-            travailDriss: "Driss était <b>Monteur et preneur de son</b>.",
+            travailDriss: "Driss était <b>Monteur et preneur de son</b>. Il s'occupait de la production vidéo.",
             history: '<div class="received bubble">Bonjour des Têtes de l\'Art !</div>'
         }
     };
@@ -185,8 +203,10 @@
         
         let html = '<div class="received bubble">Sélectionnez une entreprise :</div><div class="biz-list">';
         for (let biz in bizConfigs) {
-            html += `<div class="biz-btn" onclick="startChat('${biz.replace(/'/g, "\\'")}')">
-                        <img src="${bizConfigs[biz].logo}" class="biz-thumb">${biz}
+            // Correction ici pour l'apostrophe dans le nom de l'entreprise
+            const bizEscaped = biz.replace(/'/g, "\\'");
+            html += `<div class="biz-btn" onclick="startChat('${bizEscaped}')">
+                        <img src="${bizConfigs[biz].logo}" class="biz-thumb"> ${biz}
                      </div>`;
         }
         document.getElementById('chatFlow').innerHTML = html + '</div>';
@@ -223,7 +243,8 @@
         const text = input.value.trim().toLowerCase();
         if(!text || !activeBiz) return;
 
-        flow.innerHTML += `<div class="sent bubble">${input.value}</div>`;
+        const userMsg = `<div class="sent bubble">${input.value}</div>`;
+        flow.innerHTML += userMsg;
         input.value = "";
         scrollDown();
 
@@ -238,7 +259,7 @@
             let response = "";
             if(text.includes("présentez") || text.includes("presentez")) response = bizConfigs[activeBiz].presentation;
             else if(text.includes("driss")) response = bizConfigs[activeBiz].travailDriss;
-            else response = "Essayez : <b>'présentez-vous'</b> ou <b>'parlez-moi de driss'</b>.";
+            else response = "Désolé, je ne comprends pas. Essayez : 'présentez-vous' ou 'parlez-moi de driss'.";
 
             flow.innerHTML += `<div class="received bubble"><b>${activeBiz} :</b> ${response}</div>`;
             addSuggestions();
